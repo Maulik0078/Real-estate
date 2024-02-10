@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="action_estate_property_offer" model="ir.actions.act_window">
+        <field name="name">Offers</field>
+        <field name="res_model">offer.model</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('property_id.property_type_id', '=', context.get('active_id'))]</field>
+        <field name="type">ir.actions.act_window</field>
+      </record>
+
+      <record id="view_estate_offers_tree" model="ir.ui.view">
+            <field name="name">offer.tree</field>
+            <field name="model">offer.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="price"/>
+                    <field name="partner_id"/>
+                    <field name="validity"/>
+                    <field name="date_deadline"/>
+                </tree> 
+            </field>
+      </record>
+
+
+    </data>   
+</odoo>
+    
